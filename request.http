@@ -1,0 +1,16 @@
+### users index
+GET http://localhost:3000/users
+
+### users create
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Lilly Lemon",
+  "username": "lilemon",
+  "bio": "Whatsup squad fam",
+  "email": "lilemon@example.com"
+}
+
+### users show
+GET http://localhost:3000/users/6
