@@ -26,4 +26,23 @@ class UsersController < ApplicationController
     render json: searched_user
   end
 
+  def update
+    user = User.find(params["id"])
+    user.name = params["name"] || user.name
+    user.username = params["username"] || user.username
+    user.bio = params["bio"] || user.bio
+    user.email = params["email"] || user.email
+    if user.save
+      render json: user
+    else
+      render json: {error_message: user.errors.full_messages}, status: 422
+    end
+  end
+
+  def destroy
+    user = User.find(params["id"])
+    user.destroy
+    render json: {deletion_message: "Your user profile was successfully deleted!"}
+  end
+
 end

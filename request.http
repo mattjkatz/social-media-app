@@ -14,3 +14,14 @@ Content-Type: application/json
 
 ### users show
 GET http://localhost:3000/users/6
+
+### users update
+PATCH http://localhost:3000/users/7
+Content-Type: application/json
+
+{
+  "name": "Lilleth Lemon"
+}
+
+### users delete
+DELETE http://localhost:3000/users/7
